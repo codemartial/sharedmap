@@ -54,7 +54,7 @@ func (s *SharedMap) Delete(key KeyType) bool {
 
 // Returns the number of elements stored in the map
 func (s *SharedMap) Size() int {
-	rchan := make(chan int)
+	rchan := make(chan int, 1)
 	s.cMapSize <- rchan
 	return <-rchan
 }

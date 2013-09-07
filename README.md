@@ -1,7 +1,7 @@
 sharedmap
 =========
 
-An embarrassingly simple concurrent map implementation in Go based synchronization through channel I/O instead of mutexes.
+An embarrassingly simple concurrent map implementation in Go, based on synchronization through channel I/O instead of mutexes.
 
 A benchmark is included in the test file. On my laptop (darwin/amd64 on 2.4GHz Core i7 with 1333 MHz DDR3 RAM) I get the following results:
 
