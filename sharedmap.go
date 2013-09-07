@@ -29,10 +29,6 @@ type itemDel struct {
 	cSuccess chan bool
 }
 
-type MapInfo struct {
-	Length, Capacity int
-}
-
 // Gets the value corresponding to the given key from the SharedMap
 func (s *SharedMap) Get(key KeyType) ValueType {
 	g := itemYield{key, make(chan ValueType, 1)}
