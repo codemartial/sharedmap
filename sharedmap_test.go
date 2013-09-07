@@ -42,8 +42,8 @@ func TestSharedMapDelete(t *testing.T) {
 
 func benchmarkSharedMapN(b *testing.B, concurrents int) {
 	s := sharedmap.NewSharedMap()
-	r2wRatio := 40 // 40:1 read:write ratio
-	a2dRatio := 10 // 10:1 add:delete ratio
+	r2wRatio := 4 // 4:1 read:write ratio
+	a2dRatio := 100 // 100:1 add:delete ratio
 	done := make(chan bool)
 
 	b.ResetTimer()
@@ -109,16 +109,8 @@ func BenchmarkSharedMapSingle(b *testing.B) {
 	benchmarkSharedMapN(b, 1)
 }
 
-func BenchmarkSharedMap10(b *testing.B) {
-	benchmarkSharedMapN(b, 10)
-}
-
 func BenchmarkSharedMap100(b *testing.B) {
 	benchmarkSharedMapN(b, 100)
-}
-
-func BenchmarkSharedMap10000(b *testing.B) {
-	benchmarkSharedMapN(b, 10000)
 }
 
 func BenchmarkSharedMap100000(b *testing.B) {
@@ -129,16 +121,8 @@ func BenchmarkMutexMapSingle(b *testing.B) {
 	benchmarkMutexMapN(b, 1)
 }
 
-func BenchmarkMutexMap10(b *testing.B) {
-	benchmarkMutexMapN(b, 10)
-}
-
 func BenchmarkMutexMap100(b *testing.B) {
 	benchmarkMutexMapN(b, 100)
-}
-
-func BenchmarkMutexMap10000(b *testing.B) {
-	benchmarkMutexMapN(b, 10000)
 }
 
 func BenchmarkMutexMap100000(b *testing.B) {
