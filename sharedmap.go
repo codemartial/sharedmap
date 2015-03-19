@@ -1,7 +1,7 @@
 package sharedmap
 
-type KeyType int   // Change this for a different key type
-type ValueType int // Change this for a different value type
+type KeyType
+type ValueType
 
 // A concurrency-safe Map implementation based on
 // synchronization through channel I/O instead of
