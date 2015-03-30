@@ -7,9 +7,6 @@ import (
 	"testing"
 )
 
-type sharedmap.KeyType interface{}   // Change this for a different key type
-type sharedmap.ValueType interface{} // Change this for a different value type
-
 const MAPSIZE = 1000000
 
 var sm = sharedmap.NewSharedMap()

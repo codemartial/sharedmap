@@ -1,7 +1,7 @@
 package sharedmap
 
-type KeyType
-type ValueType
+type KeyType interface{}
+type ValueType interface{}
 
 // A concurrency-safe Map implementation based on
 // synchronization through channel I/O instead of
